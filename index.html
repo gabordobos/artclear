@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ArtClear GmbH – Professional cleaning in Zug, Baar, Wollerau, Pfäffikon & Horgen</title>
-  <meta name="description" content="More than 15 years of experience in cleaning exclusive properties, private residences, and offices. Precise. Discreet. Consistent.">
+  <title data-i18n="meta.title">ArtClear GmbH – Professional cleaning in Zug, Baar, Wollerau, Pfäffikon & Horgen</title>
+  <meta name="description" data-i18n-attr="content:meta.desc" content="More than 15 years of experience in cleaning exclusive properties, private residences, and offices. Precise. Discreet. Consistent.">
   <link rel="icon" href="assets/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,34 +22,34 @@
         <a class="topbar__link" href="mailto:info@artclear.ch"><img src="assets/icon-email.png" alt="" width="20" height="20">info@artclear.ch</a>
         <span class="topbar__sep" aria-hidden="true"></span>
         <div class="lang">
-          <button class="lang__btn is-active" type="button">EN</button>
-          <button class="lang__btn" type="button">DE</button>
+          <button class="lang__btn is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button class="lang__btn" type="button" data-lang="de" aria-pressed="false">DE</button>
         </div>
       </div>
     </div>
 
-    <a class="logo" href="#top" aria-label="ArtClear – back to top">
+    <a class="logo" href="#top" aria-label="ArtClear – back to top" data-i18n-attr="aria-label:logo.label">
       <img src="assets/logo.png" alt="ArtClear GmbH" width="112" height="112">
     </a>
 
     <nav class="nav" id="main-nav" aria-label="Main">
-      <a class="gold-text" href="#about">About us</a>
-      <a class="gold-text" href="#why">Why Artclear?</a>
-      <a class="gold-text" href="#services">Our services</a>
-      <a class="gold-text" href="#area">Service area</a>
-      <a class="gold-text" href="#creations">Our creations</a>
-      <a class="gold-text" href="#contact">Contact</a>
+      <a class="gold-text" href="#about" data-i18n="nav.about">About us</a>
+      <a class="gold-text" href="#why" data-i18n="nav.why">Why Artclear?</a>
+      <a class="gold-text" href="#services" data-i18n="nav.services">Our services</a>
+      <a class="gold-text" href="#area" data-i18n="nav.area">Service area</a>
+      <a class="gold-text" href="#creations" data-i18n="nav.creations">Our creations</a>
+      <a class="gold-text" href="#contact" data-i18n="nav.contact">Contact</a>
     </nav>
 
     <!-- mobile only -->
     <div class="mobile-bar">
       <div class="lang">
-        <button class="lang__btn is-active" type="button">EN</button>
-        <button class="lang__btn" type="button">DE</button>
+        <button class="lang__btn is-active" type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang__btn" type="button" data-lang="de" aria-pressed="false">DE</button>
       </div>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
         <svg width="12" height="10" viewBox="0 0 12 10" aria-hidden="true"><path d="M0 1h12M0 5h8M0 9h12" stroke="url(#g)" stroke-width="1.6"/><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe9b9"/><stop offset="1" stop-color="#dfa951"/></linearGradient></defs></svg>
-        <span class="gold-text">Menu</span>
+        <span class="gold-text" data-i18n="menu">Menu</span>
       </button>
     </div>
   </header>
@@ -57,11 +57,11 @@
   <main>
     <!-- ===== HERO ===== -->
     <section class="hero" aria-label="Intro">
-      <img class="hero__img" src="assets/hero.jpg" alt="Cleaner wiping a desk in an elegant office">
+      <img class="hero__img" src="assets/hero.jpg" alt="Cleaner wiping a desk in an elegant office" data-i18n-attr="alt:hero.alt">
       <div class="hero__shade"></div>
       <h1 class="hero__title">
-        <span class="gold-text hero__title-main">Perfection in <br class="br-mobile">every detail</span>
-        <span class="hero__title-sub">Precise. Without compromise.</span>
+        <span class="gold-text hero__title-main" data-i18n="hero.title">Perfection in <br class="br-mobile">every detail</span>
+        <span class="hero__title-sub" data-i18n="hero.sub">Precise. Without compromise.</span>
       </h1>
     </section>
 
@@ -73,26 +73,26 @@
       <!-- ===== ABOUT ===== -->
       <section class="about" id="about">
         <p class="about__text">
-          More than 15 years of experience in <br class="br-desktop">cleaning exclusive properties, <br class="br-desktop">private residences, and offices.
-          <span class="gold-text about__claim">Precise. Discreet. Consistent.</span>
+          <span data-i18n="about.text">More than 15 years of experience in <br class="br-desktop">cleaning exclusive properties, <br class="br-desktop">private residences, and offices.</span>
+          <span class="gold-text about__claim" data-i18n="about.claim">Precise. Discreet. Consistent.</span>
         </p>
-        <a class="btn-gold" href="#contact">Request a quote</a>
+        <a class="btn-gold" href="#contact" data-i18n="cta.quote">Request a quote</a>
       </section>
 
       <hr class="rule">
 
       <!-- ===== WHY ===== -->
       <section class="why" id="why">
-        <h2 class="section-title gold-text">Why ArtClear?</h2>
+        <h2 class="section-title gold-text" data-i18n="why.title">Why ArtClear?</h2>
         <div class="why__rows">
           <ul class="why__list">
-            <li class="pill"><img src="assets/check.png" alt="" width="32" height="32">Consistent quality</li>
-            <li class="pill"><img src="assets/check.png" alt="" width="32" height="32">Reliable presence</li>
-            <li class="pill"><img src="assets/check.png" alt="" width="32" height="32">Fast response times</li>
+            <li class="pill"><img src="assets/check.png" alt="" width="32" height="32"><span data-i18n="why.quality">Consistent quality</span></li>
+            <li class="pill"><img src="assets/check.png" alt="" width="32" height="32"><span data-i18n="why.presence">Reliable presence</span></li>
+            <li class="pill"><img src="assets/check.png" alt="" width="32" height="32"><span data-i18n="why.response">Fast response times</span></li>
           </ul>
           <ul class="why__list">
-            <li class="pill"><img src="assets/check.png" alt="" width="32" height="32">Discreet execution</li>
-            <li class="pill"><img src="assets/check.png" alt="" width="32" height="32">Transparent cooperation</li>
+            <li class="pill"><img src="assets/check.png" alt="" width="32" height="32"><span data-i18n="why.discreet">Discreet execution</span></li>
+            <li class="pill"><img src="assets/check.png" alt="" width="32" height="32"><span data-i18n="why.transparent">Transparent cooperation</span></li>
           </ul>
         </div>
       </section>
@@ -101,16 +101,16 @@
 
       <!-- ===== SERVICES ===== -->
       <section class="services" id="services">
-        <h2 class="section-title gold-text">Our services</h2>
+        <h2 class="section-title gold-text" data-i18n="services.title">Our services</h2>
         <div class="services__grid">
-          <article class="card card--wide"><img src="assets/svc-regular.jpg" alt=""><div class="card__body"><h3>Regular cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text">Request a quote</span></a></div></article>
-          <article class="card"><img src="assets/svc-deep.jpg" alt=""><div class="card__body"><h3>Deep cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text">Request a quote</span></a></div></article>
-          <article class="card"><img src="assets/svc-window.jpg" alt=""><div class="card__body"><h3>Window cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text">Request a quote</span></a></div></article>
-          <article class="card"><img src="assets/svc-stairwell.jpg" alt=""><div class="card__body"><h3>Office and stairwell cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text">Request a quote</span></a></div></article>
-          <article class="card"><img src="assets/svc-post-move.jpg" alt=""><div class="card__body"><h3>Post-move<br>cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text">Request a quote</span></a></div></article>
-          <article class="card card--wide"><img src="assets/svc-office.jpg" alt=""><div class="card__body"><h3>Office cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text">Request a quote</span></a></div></article>
-          <article class="card card--wide"><img src="assets/svc-upholstery.jpg" alt=""><div class="card__body"><h3>Upholstery and carpet cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text">Request a quote</span></a></div></article>
-          <article class="card card--wide"><img src="assets/svc-special.jpg" alt=""><div class="card__body"><h3>Special cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text">Request a quote</span></a></div></article>
+          <article class="card card--wide"><img src="assets/svc-regular.jpg" alt=""><div class="card__body"><h3 data-i18n="svc.regular">Regular cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text" data-i18n="cta.quote">Request a quote</span></a></div></article>
+          <article class="card"><img src="assets/svc-deep.jpg" alt=""><div class="card__body"><h3 data-i18n="svc.deep">Deep cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text" data-i18n="cta.quote">Request a quote</span></a></div></article>
+          <article class="card"><img src="assets/svc-window.jpg" alt=""><div class="card__body"><h3 data-i18n="svc.window">Window cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text" data-i18n="cta.quote">Request a quote</span></a></div></article>
+          <article class="card"><img src="assets/svc-stairwell.jpg" alt=""><div class="card__body"><h3 data-i18n="svc.stairwell">Office and stairwell cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text" data-i18n="cta.quote">Request a quote</span></a></div></article>
+          <article class="card"><img src="assets/svc-post-move.jpg" alt=""><div class="card__body"><h3 data-i18n="svc.postmove">Post-move<br>cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text" data-i18n="cta.quote">Request a quote</span></a></div></article>
+          <article class="card card--wide"><img src="assets/svc-office.jpg" alt=""><div class="card__body"><h3 data-i18n="svc.office">Office cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text" data-i18n="cta.quote">Request a quote</span></a></div></article>
+          <article class="card card--wide"><img src="assets/svc-upholstery.jpg" alt=""><div class="card__body"><h3 data-i18n="svc.upholstery">Upholstery and carpet cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text" data-i18n="cta.quote">Request a quote</span></a></div></article>
+          <article class="card card--wide"><img src="assets/svc-special.jpg" alt=""><div class="card__body"><h3 data-i18n="svc.special">Special cleaning</h3><a class="card__cta" href="#contact"><span class="gold-text" data-i18n="cta.quote">Request a quote</span></a></div></article>
         </div>
       </section>
 
@@ -118,7 +118,7 @@
       <section class="area" id="area">
         <img class="area__map" src="assets/map.svg" alt="" aria-hidden="true">
         <div class="area__text">
-          <h2 class="section-title gold-text">Service area</h2>
+          <h2 class="section-title gold-text" data-i18n="area.title">Service area</h2>
           <p class="area__towns">Zug | Baar | Wollerau<span class="br-desktop"> |</span> <br class="br-mobile">Pfäffikon | Horgen</p>
         </div>
       </section>
@@ -128,15 +128,15 @@
       <!-- ===== OUR CREATIONS ===== -->
       <section class="creations" id="creations">
         <div class="creations__text">
-          <p class="creations__kicker">Our creations</p>
-          <h2 class="section-title gold-text">Handmade Advent and Christmas Decorations</h2>
-          <p>ArtClear stands for professional cleaning and creative craftsmanship. Alongside our cleaning services, we create individual Advent wreaths and festive Christmas decorations with great attention to detail. Each arrangement is handmade and unique.</p>
-          <p>Our gallery features a selection of our work. During the Advent season, we also present our creations at Christmas markets, where we look forward to meeting you in person. If you have any questions or are interested, please get in touch.</p>
-          <a class="btn-gold" href="#contact">Get in touch</a>
+          <p class="creations__kicker" data-i18n="creations.kicker">Our creations</p>
+          <h2 class="section-title gold-text" data-i18n="creations.title">Handmade Advent and Christmas Decorations</h2>
+          <p data-i18n="creations.p1">ArtClear stands for professional cleaning and creative craftsmanship. Alongside our cleaning services, we create individual Advent wreaths and festive Christmas decorations with great attention to detail. Each arrangement is handmade and unique.</p>
+          <p data-i18n="creations.p2">Our gallery features a selection of our work. During the Advent season, we also present our creations at Christmas markets, where we look forward to meeting you in person. If you have any questions or are interested, please get in touch.</p>
+          <a class="btn-gold" href="#contact" data-i18n="creations.cta">Get in touch</a>
         </div>
         <div class="creations__gallery">
-          <figure class="creations__item"><img src="assets/creation-puppies.jpg" alt="Advent arrangement with two candles, bottle-brush trees, puppy figurines, red berries and holly" width="880" height="1139" loading="lazy"></figure>
-          <figure class="creations__item"><img src="assets/creation-deer.jpg" alt="Advent arrangement with green candles, fir branches, pine cones and deer figurines" width="880" height="1143" loading="lazy"></figure>
+          <figure class="creations__item"><img src="assets/creation-puppies.jpg" data-i18n-attr="alt:creations.alt1" alt="Advent arrangement with two candles, bottle-brush trees, puppy figurines, red berries and holly" width="880" height="1139" loading="lazy"></figure>
+          <figure class="creations__item"><img src="assets/creation-deer.jpg" data-i18n-attr="alt:creations.alt2" alt="Advent arrangement with green candles, fir branches, pine cones and deer figurines" width="880" height="1143" loading="lazy"></figure>
         </div>
       </section>
 
@@ -144,7 +144,7 @@
 
       <!-- ===== CONTACT ===== -->
       <section class="contact" id="contact">
-        <h2 class="section-title gold-text">Contact</h2>
+        <h2 class="section-title gold-text" data-i18n="contact.title">Contact</h2>
         <div class="contact__info">
           <p class="contact__company">ArtClear GmbH</p>
           <p class="contact__lines">
@@ -154,12 +154,12 @@
           </p>
         </div>
         <form class="form" action="#" onsubmit="event.preventDefault(); this.querySelector('.form__note').hidden = false;">
-          <input class="field" type="text" name="name" placeholder="Name" aria-label="Name" required>
-          <input class="field" type="email" name="email" placeholder="Email" aria-label="Email" required>
-          <input class="field" type="tel" name="phone" placeholder="Phone" aria-label="Phone">
-          <textarea class="field field--area" name="message" placeholder="Message" aria-label="Message" required></textarea>
-          <button class="btn-outline" type="submit"><span class="gold-text">Send</span></button>
-          <p class="form__note" hidden>Prototype – the message was not sent.</p>
+          <input class="field" type="text" name="name" placeholder="Name" aria-label="Name" data-i18n-attr="placeholder:form.name,aria-label:form.name" required>
+          <input class="field" type="email" name="email" placeholder="Email" aria-label="Email" data-i18n-attr="placeholder:form.email,aria-label:form.email" required>
+          <input class="field" type="tel" name="phone" placeholder="Phone" aria-label="Phone" data-i18n-attr="placeholder:form.phone,aria-label:form.phone">
+          <textarea class="field field--area" name="message" placeholder="Message" aria-label="Message" data-i18n-attr="placeholder:form.message,aria-label:form.message" required></textarea>
+          <button class="btn-outline" type="submit"><span class="gold-text" data-i18n="form.send">Send</span></button>
+          <p class="form__note" hidden data-i18n="form.note">Prototype – the message was not sent.</p>
         </form>
       </section>
 
@@ -173,6 +173,7 @@
     <img src="assets/footer-bump.png" alt="" width="160" height="19">
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -17,6 +17,8 @@
 
   --header-h: 150px;
   --gutter: clamp(16px, 6.25vw, 120px);
+  /* above 1920px the header content stays on the 1920 design grid (12 col, 120px margin) */
+  --edge: max(0px, (100% - 1920px) / 2); /* % resolves where it is used: the header width */
 }
 
 *,
@@ -86,7 +88,7 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   align-items: center;
   justify-content: flex-end;
   gap: 20px;
-  padding-right: clamp(16px, 6.77vw, 130px);
+  padding-right: calc(clamp(16px, 6.77vw, 130px) + var(--edge));
   font-size: 14px;
   line-height: 16px;
 }
@@ -127,7 +129,7 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
 
 .logo {
   position: absolute;
-  left: var(--gutter);
+  left: calc(var(--gutter) + var(--edge));
   top: 17px;
   width: 112px;
   height: 112px;
@@ -138,7 +140,7 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
 
 .nav {
   position: absolute;
-  right: clamp(16px, 6.77vw, 130px);
+  right: calc(clamp(16px, 6.77vw, 130px) + var(--edge));
   top: 90px;
   display: flex;
   gap: 20px;
@@ -349,11 +351,11 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   position: absolute;
   inset: 0 0 auto 0;
   width: 100%;
-  height: 72%;
+  height: 82%;
   object-fit: cover;
   object-position: center top;
-  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 85%, transparent 100%);
   transform-origin: 50% 30%;
   transition: transform .6s ease;
 }
@@ -361,7 +363,8 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   content: "";
   position: absolute;
   inset: 20.95% 0 0.75% 0;
-  background: linear-gradient(to top, var(--card) 0.979%, rgba(20, 19, 19, 0));
+  /* lighter than the design: keeps the photo clear, dark only behind the title */
+  background: linear-gradient(to top, var(--card) 0%, rgba(10, 9, 9, .85) 22%, rgba(10, 9, 9, .35) 48%, rgba(10, 9, 9, 0) 70%);
   transition: top .45s ease;
 }
 .card__body {
@@ -692,6 +695,8 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
     text-transform: uppercase;
     cursor: pointer;
   }
+  /* room for umlauts (MENÜ): background-clip:text only paints inside the box */
+  .menu-toggle .gold-text { padding: 4px 0; margin: -4px 0; }
 
   .logo {
     left: 50%;
