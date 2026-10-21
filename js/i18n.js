@@ -33,11 +33,10 @@ window.I18N_DE = {
   'svc.regular': 'Unterhaltsreinigung',
   'svc.deep': 'Grundreinigung',
   'svc.window': 'Fensterreinigung',
-  'svc.stairwell': 'Büro- und Treppenhaus&shy;reinigung',
-  'svc.postmove': 'Umzugs&shy;reinigung',
+  'svc.staircase': 'Treppenhaus&shy;reinigung',
+  'svc.moveout': 'Umzugs&shy;reinigung',
+  'svc.household': 'Haushalts&shy;organisation',
   'svc.office': 'Büroreinigung',
-  'svc.upholstery': 'Polster- und Teppichreinigung',
-  'svc.special': 'Spezialreinigung',
 
   'area.title': 'Einsatzgebiet',
 
