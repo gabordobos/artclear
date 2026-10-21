@@ -135,6 +135,7 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   height: 112px;
   border-radius: 50%;
   overflow: hidden;
+  background: var(--brown); /* the SVG logo is transparent; on mobile it overlaps the hero */
 }
 .logo img { width: 100%; height: 100%; }
 
