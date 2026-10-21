@@ -42,9 +42,9 @@ window.I18N_DE = {
   'area.title': 'Einsatzgebiet',
 
   'creations.kicker': 'Unsere Kreationen',
-  'creations.title': 'Handgefertigte Advents- und Weihnachts&shy;dekorationen',
-  'creations.p1': 'ArtClear steht für professionelle Reinigung und kreatives Handwerk. Neben unseren Reinigungsleistungen gestalten wir mit viel Liebe zum Detail individuelle Adventskränze und festliche Weihnachtsdekorationen. Jedes Arrangement ist handgefertigt und ein Unikat.',
-  'creations.p2': 'In unserer Galerie zeigen wir eine Auswahl unserer Arbeiten. In der Adventszeit präsentieren wir unsere Kreationen zudem an Weihnachtsmärkten, wo wir uns darauf freuen, Sie persönlich kennenzulernen. Bei Fragen oder Interesse nehmen Sie gerne Kontakt mit uns auf.',
+  'creations.title': 'Handgemachte Advents- und Weihnachts&shy;dekoration',
+  'creations.p1': 'ArtClear steht für professionelle Reinigung und kreative Handarbeit. Neben unserer Reinigungsarbeit gestalten wir mit viel Liebe zum Detail individuelle Adventskränze und festliche Weihnachtsdekorationen. Jedes Arrangement wird von Hand zusammengestellt und ist ein Unikat.',
+  'creations.p2': 'In unserer Bildergalerie sehen Sie eine Auswahl unserer Arbeiten. In der Adventszeit präsentieren wir unsere Kreationen auch auf Weihnachtsmärkten. Wir freuen uns, Sie dort persönlich kennenzulernen. Bei Fragen oder Interesse freuen wir uns über Ihre Kontaktaufnahme.',
   'creations.cta': 'Kontakt aufnehmen',
   'creations.alt1': 'Adventsgesteck mit zwei Kerzen, Flaschenbürsten-Bäumchen, Hundefiguren, roten Beeren und Stechpalme',
   'creations.alt2': 'Adventsgesteck mit grünen Kerzen, Tannenzweigen, Zapfen und Rehfiguren',
