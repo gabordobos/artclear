@@ -288,11 +288,16 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   gap: 60px;
   padding: 0 16px;
 }
+.why__rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
 .why__list {
   list-style: none;
   margin: 0;
   padding: 0;
-  max-width: 1014px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -334,8 +339,10 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
 .card {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 25px;
   background: var(--card);
+  box-shadow: 0 0 0 0 #e9c077;
+  transition: box-shadow .35s ease;
 }
 .card--wide { grid-column: span 2; }
 .card img {
@@ -347,6 +354,7 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   object-position: center top;
   -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+  transform-origin: 50% 30%;
   transition: transform .6s ease;
 }
 .card::after {
@@ -354,20 +362,71 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   position: absolute;
   inset: 20.95% 0 0.75% 0;
   background: linear-gradient(to top, var(--card) 0.979%, rgba(20, 19, 19, 0));
+  transition: top .45s ease;
 }
-.card h3 {
+.card__body {
   position: absolute;
   z-index: 1;
   left: 9.92%;
   right: 9.92%;
   bottom: 11.22%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: bottom .35s ease;
+}
+.card h3 {
   font-family: var(--font-display);
   font-size: 24px;
   line-height: 1.15;
   text-transform: uppercase;
   text-align: center;
 }
-.card:hover img { transform: scale(1.03); }
+.card__cta {
+  display: inline-flex;
+  align-items: center;
+  max-height: 0;
+  margin-top: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  opacity: 0;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  font: 14px/16px var(--font-body);
+  white-space: nowrap;
+  transition: max-height .35s ease, margin-top .35s ease, padding .35s ease, opacity .3s ease, background .2s, border-color .35s;
+}
+.card__cta:hover { background: var(--gold); }
+.card__cta:hover span { color: var(--brown); background: none; }
+
+/* Hover state – Figma component "Group 2", Property 1=Variant2 */
+.card:hover,
+.card:focus-within { box-shadow: 0 3px 0 0 #e9c077; }
+.card:hover img,
+.card:focus-within img { transform: scale(1.18); }
+.card:hover::after,
+.card:focus-within::after { top: 13.22%; }
+.card:hover .card__body,
+.card:focus-within .card__body { bottom: 9.48%; }
+.card:hover .card__cta,
+.card:focus-within .card__cta {
+  max-height: 38px;
+  margin-top: 30px;
+  padding: 10px 20px;
+  opacity: 1;
+  border-color: var(--gold-light);
+}
+
+/* Touch screens have no hover: keep the button visible */
+@media (hover: none) {
+  .card__cta {
+    max-height: 38px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    opacity: 1;
+    border-color: var(--gold-light);
+  }
+}
 
 /* Service area */
 .services { z-index: 2; }
@@ -380,18 +439,13 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   top: -16.25vw;
   left: calc(50% - 50vw + 2.135vw);
   width: 97.86vw;
-  aspect-ratio: 1879 / 1194;
-  background: url("../assets/map.jpg") left top / cover no-repeat;
-  opacity: .5;
-}
-.area__map::after {
-  content: "";
-  position: absolute;
-  left: -2.18%;
-  width: 102.2%;
-  top: 10.2%;
-  height: 87%;
-  background: linear-gradient(to top, var(--black) 0.979%, rgba(20, 19, 19, 0) 99.021%);
+  height: auto;
+  aspect-ratio: 3898 / 2477;
+  max-width: none;
+  pointer-events: none;
+  /* fades out toward the bottom like the gradient layer in the design */
+  -webkit-mask-image: linear-gradient(to bottom, #000 35%, transparent 80%);
+  mask-image: linear-gradient(to bottom, #000 35%, transparent 80%);
 }
 .area__text {
   display: flex;
@@ -611,6 +665,7 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
 
   .why { gap: 60px; padding: 0; }
   .why .section-title { font-size: 30px; line-height: 40px; }
+  .why__rows { gap: 40px; }
   .why__list { flex-direction: column; align-items: center; gap: 40px; }
   .pill { padding: 10px 30px 10px 20px; }
   .pill img { width: 24px; height: 24px; }
@@ -625,7 +680,6 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
     left: calc(50% - 220px - 890px);
     width: 1734px;
   }
-  .area__map::after { left: 51.7%; width: 25.3%; top: 16%; height: 81%; }
   .area__text { align-items: center; text-align: center; }
   .area__text .section-title { text-align: center; }
   .br-mobile { display: inline; }
@@ -648,3 +702,14 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
 
 .no-anim .nav,
 .no-anim .nav a { transition: none !important; }
+
+/* ===== FULL HD AND WIDER ===== */
+@media (min-width: 1920px) {
+  /* scale the hero with the viewport so the photo is never cropped at the top */
+  .hero { height: 45.05vw; }
+  .hero__img { object-position: center 15%; }
+
+  /* grow the video box with the width so the desk-wiping part stays in view */
+  .content { padding-bottom: 10.21vw; }
+  .footer-video { height: 42.34vw; }
+}
