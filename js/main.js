@@ -80,3 +80,64 @@
   var param = new URLSearchParams(location.search).get('lang');
   setLang(param || saved || 'en');
 })();
+
+// Creations gallery: native scroll-snap track, arrows page by the visible
+// count, counter and progress bar follow the scroll position. Tiles open a lightbox.
+(function () {
+  var root = document.querySelector('[data-gallery]');
+  if (!root) return;
+  var track = root.querySelector('[data-gallery-track]');
+  var items = track.children;
+  var prev = root.querySelector('[data-gallery-prev]');
+  var next = root.querySelector('[data-gallery-next]');
+  var current = root.querySelector('[data-gallery-current]');
+  var bar = root.querySelector('[data-gallery-bar]');
+  var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+  root.querySelector('[data-gallery-total]').textContent = pad(items.length);
+
+  function step() { return items[1].offsetLeft - items[0].offsetLeft; }
+  function perView() { return Math.max(1, Math.round(track.clientWidth / step())); }
+
+  function update() {
+    var max = track.scrollWidth - track.clientWidth;
+    var first = Math.round(track.scrollLeft / step());
+    current.textContent = pad(Math.min(first + 1, items.length));
+    var share = Math.min(1, track.clientWidth / track.scrollWidth);
+    bar.style.width = share * 100 + '%';
+    bar.style.marginLeft = (max > 0 ? track.scrollLeft / max : 0) * (1 - share) * 100 + '%';
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= max - 2;
+  }
+
+  prev.addEventListener('click', function () { track.scrollBy({ left: -step() * perView() }); });
+  next.addEventListener('click', function () { track.scrollBy({ left: step() * perView() }); });
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+
+  var box = document.querySelector('[data-lightbox]');
+  if (!box || !box.showModal) return;
+  var big = box.querySelector('[data-lightbox-img]');
+  var buttons = Array.prototype.slice.call(track.querySelectorAll('.gallery__open'));
+  var index = 0;
+
+  function show(i) {
+    index = (i + buttons.length) % buttons.length;
+    var thumb = buttons[index].querySelector('img');
+    big.src = buttons[index].dataset.full;
+    big.alt = thumb.alt;
+  }
+
+  buttons.forEach(function (btn, i) {
+    btn.addEventListener('click', function () { show(i); box.showModal(); });
+  });
+  box.querySelector('[data-lightbox-prev]').addEventListener('click', function () { show(index - 1); });
+  box.querySelector('[data-lightbox-next]').addEventListener('click', function () { show(index + 1); });
+  box.querySelector('[data-lightbox-close]').addEventListener('click', function () { box.close(); });
+  box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+  box.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') show(index - 1);
+    if (e.key === 'ArrowRight') show(index + 1);
+  });
+  box.addEventListener('close', function () { buttons[index].focus(); });
+})();
