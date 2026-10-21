@@ -584,7 +584,7 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
 
 /* ===== MOBILE (design: 440px) ===== */
 @media (max-width: 900px) {
-  :root { --header-h: 171px; }
+  :root { --header-h: 104px; }
   html { scroll-padding-top: 20px; }
 
   .site-header {
@@ -598,18 +598,18 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   .nav {
     position: static;
     order: 0;
-    height: 119px;
+    height: 52px;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding-top: 83px;
+    padding-top: 16px;
     background: var(--black);
     border-radius: 0 0 25px 25px;
     overflow: hidden;
     transition: height .35s ease;
   }
   .nav a { visibility: hidden; opacity: 0; transition: opacity .25s; }
-  .site-header.is-open .nav { height: 304px; }
+  .site-header.is-open .nav { height: 237px; }
   .site-header.is-open .nav a { visibility: visible; opacity: 1; }
 
   .mobile-bar {
