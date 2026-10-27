@@ -139,7 +139,7 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
 }
 .logo img { width: 100%; height: 100%; }
 
-.mobile-contact { display: none; }
+.nav__contact { display: none; }
 
 .nav {
   position: absolute;
@@ -783,7 +783,7 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
 
 /* ===== MOBILE (design: 440px) ===== */
 @media (max-width: 900px) {
-  :root { --header-h: 104px; }
+  :root { --header-h: 128px; }
   html { scroll-padding-top: 20px; }
 
   .site-header {
@@ -794,26 +794,43 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   }
   .topbar { display: none; }
 
+  /* closed: only the gold contact band at the bottom of the panel shows;
+     open: the menu items slide in above it (Figma 115:683 / 115:802) */
   .nav {
     position: static;
     order: 0;
-    height: 52px;
+    height: 78px;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
     gap: 20px;
-    padding-top: 16px;
     background: var(--black);
     border-radius: 0 0 25px 25px;
     overflow: hidden;
     transition: height .35s ease;
   }
-  .nav a { visibility: hidden; opacity: 0; transition: opacity .25s; }
-  .site-header.is-open .nav { height: 273px; } /* 237px in the design + one extra menu item */
-  .site-header.is-open .nav a { visibility: visible; opacity: 1; }
+  .nav > a { visibility: hidden; opacity: 0; transition: opacity .25s; }
+  .site-header.is-open .nav { height: 329px; }
+  .site-header.is-open .nav > a { visibility: visible; opacity: 1; }
+  .nav__contact {
+    flex: 0 0 78px;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 10px 16px;
+    background: linear-gradient(150deg, var(--gold-light) 0%, var(--gold-dark) 100%);
+    color: var(--brown);
+    font-size: 16px;
+    line-height: 16px;
+  }
+  .nav__contact a { padding: 0; white-space: nowrap; }
+  .nav__contact a:hover { opacity: .75; }
 
   .mobile-bar {
     order: 1;
-    height: 52px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -832,30 +849,6 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
   }
   /* room for umlauts (MENÜ): background-clip:text only paints inside the box */
   .menu-toggle .gold-text { padding: 4px 0; margin: -4px 0; }
-
-  /* gold contact band; it overlays the top of the hero like in the design */
-  .mobile-contact {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 70px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px 16px;
-    background: linear-gradient(150deg, var(--gold-light) 0%, var(--gold-dark) 100%);
-    color: var(--brown);
-    font-size: 14px;
-    line-height: 16px;
-  }
-  .mobile-contact a { display: inline-flex; align-items: center; gap: 20px; white-space: nowrap; }
-  @media (max-width: 400px) {
-    .mobile-contact { gap: 14px; font-size: 13px; }
-    .mobile-contact a { gap: 8px; }
-  }
 
   .logo {
     left: 50%;
@@ -941,7 +934,7 @@ h1, h2, h3, p { margin: 0; font-weight: 400; }
 }
 
 .no-anim .nav,
-.no-anim .nav a { transition: none !important; }
+.no-anim .nav > a { transition: none !important; }
 
 /* ===== FULL HD AND WIDER ===== */
 @media (min-width: 1920px) {
